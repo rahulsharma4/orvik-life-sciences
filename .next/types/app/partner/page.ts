@@ -1,4 +1,4 @@
-// File: D:\ORVIK\Nextjs\src\app\partner\page.tsx
+// File: D:\ORVIK\Nextjs\src\app\partner\page.jsx
 import * as entry from '../../../../src/app/partner/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
