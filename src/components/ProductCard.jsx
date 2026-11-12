@@ -72,7 +72,7 @@ export default function ProductCard({ product, onInquire }) {
           </Link>
 
           {product.hindiTitle && (
-            <p className="text-[11px] text-amber-900 font-bold mt-1.5 line-clamp-1 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
+            <p className="text-[11px] font-hindi text-amber-900 font-semibold mt-1.5 line-clamp-1 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
               {product.hindiTitle}
             </p>
           )}

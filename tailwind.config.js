@@ -35,8 +35,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Poppins", "Segoe UI", "Roboto", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue", "Arial", "sans-serif"],
-        poppins: ["Poppins", "Segoe UI", "Roboto", "-apple-system", "sans-serif"],
+        heading: ["Outfit", '"Noto Sans Devanagari"', "sans-serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        hindi: ['"Noto Sans Devanagari"', "sans-serif"],
       },
       boxShadow: {
         "pharma": "0 4px 20px -2px rgba(0, 82, 204, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.02)",
@@ -48,4 +49,3 @@ module.exports = {
   },
   plugins: [],
 };
-

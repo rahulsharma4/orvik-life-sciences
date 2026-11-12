@@ -143,7 +143,7 @@ export default function HeroSlider({ onOpenInquiry }) {
             </div>
 
             {/* Dynamic Title with Clean High-Contrast Text */}
-            <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black tracking-tight text-slate-900 leading-[1.15]">
+            <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-heading font-black tracking-tight text-slate-900 leading-[1.15]">
               {slide.titlePart1}
               <span className="text-[#0052cc] underline decoration-amber-400 decoration-4 underline-offset-4">
                 {slide.highlightText}

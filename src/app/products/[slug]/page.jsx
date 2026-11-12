@@ -37,8 +37,75 @@ export default function ProductDetailPage() {
       (p.category === product.category || p.threePillarCategory === product.threePillarCategory)
   ).slice(0, 3);
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: product.image ? `https://orvik-life-sciences.vercel.app${product.image}` : "https://orvik-life-sciences.vercel.app/images/Logo.png",
+    description: product.tagline || product.subtitle,
+    brand: {
+      "@type": "Brand",
+      name: "ORVIK Animal Health",
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: "ORVIK LIFE SCIENCES PVT. LTD.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Shop No. 111, Ram Raj Nagar, Suchitra X Road",
+        addressLocality: "Hyderabad",
+        addressRegion: "Telangana",
+        postalCode: "500067",
+        addressCountry: "IN",
+      },
+    },
+    category: product.category,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "INR",
+      price: "0",
+      priceValidUntil: "2030-12-31",
+      availability: "https://schema.org/InStock",
+      url: `https://orvik-life-sciences.vercel.app/products/${product.slug}`,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://orvik-life-sciences.vercel.app",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: "https://orvik-life-sciences.vercel.app/products",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: `https://orvik-life-sciences.vercel.app/products/${product.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="py-10 sm:py-16 space-y-12 max-w-7xl mx-auto px-4 sm:px-8">
+      {/* Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Breadcrumb Navigation */}
       <div className="flex items-center gap-2 text-xs text-slate-500">
         <Link href="/" className="hover:text-blue-700">Home</Link>
@@ -113,7 +180,7 @@ export default function ProductDetailPage() {
             </h1>
 
             {product.hindiTitle && (
-              <div className="mt-2 text-sm sm:text-base font-bold text-amber-900 bg-amber-50 p-2.5 rounded-xl border border-amber-200 inline-block">
+              <div className="mt-2 text-sm sm:text-base font-hindi font-bold text-amber-900 bg-amber-50 p-2.5 rounded-xl border border-amber-200 inline-block">
                 {product.hindiTitle}
               </div>
             )}
