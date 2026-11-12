@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #0052cc;
+  --secondary-blue: #0066eb;
+  --accent-gold: #f59e0b;
+  --slate-dark: #0f172a;
+}
+
+html, body {
+  color: #1e293b;
+  background-color: #ffffff;
+  font-family: 'Poppins', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif !important;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select, label {
+  font-family: 'Poppins', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif !important;
+}
+
+/* Custom modern light scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0052cc;
+}
+
+/* Pristine clinical light cards */
+.pharma-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pharma-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 82, 204, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  border-color: #bfdbfe;
+}
+
+/* Light Hero Gradient */
+.hero-light-bg {
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 45%, #fffdf5 100%);
+}
+
+.hero-subtle-pattern {
+  background-image: radial-gradient(#0052cc08 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+/* Button & Badge Utilities */
+.btn-primary {
+  background: #0052cc;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.btn-primary:hover {
+  background: #0043a8;
+  box-shadow: 0 10px 20px -5px rgba(0, 82, 204, 0.3);
+}
+
+.btn-gold {
+  background: #f59e0b;
+  color: #0f172a;
+  transition: all 0.2s ease-in-out;
+}
+.btn-gold:hover {
+  background: #d97706;
+  color: #ffffff;
+  box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.35);
+}
