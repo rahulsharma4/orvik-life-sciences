@@ -17,6 +17,7 @@ import {
   AlertTriangle
 } from "lucide-react";
 import { PRODUCTS, COMPANY } from "@/data/products";
+import { API_BASE_URL } from "@/utils/api";
 
 export default function AdminPage() {
   const [inquiries, setInquiries] = useState([]);
@@ -27,7 +28,7 @@ export default function AdminPage() {
   const fetchInquiries = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/inquiries");
+      const res = await fetch(`${API_BASE_URL}/api/inquiries`);
       if (res.ok) {
         const json = await res.json();
         setInquiries(json.data || []);
@@ -71,7 +72,7 @@ export default function AdminPage() {
 
   const checkHealth = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/health");
+      const res = await fetch(`${API_BASE_URL}/api/health`);
       if (res.ok) {
         const json = await res.json();
         setDbStatus(json.database);

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { X, CheckCircle2, AlertCircle, Building2, Send } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
+import { API_BASE_URL } from "@/utils/api";
 
 export default function InquiryModal({ isOpen, onClose, defaultProduct }) {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ export default function InquiryModal({ isOpen, onClose, defaultProduct }) {
     setErrorMessage("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/inquiries", {
+      const response = await fetch(`${API_BASE_URL}/api/inquiries`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
