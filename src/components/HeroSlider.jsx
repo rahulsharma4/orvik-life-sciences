@@ -270,11 +270,10 @@ export default function HeroSlider({ onOpenInquiry }) {
                 key={s.id}
                 onClick={() => setCurrent(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  current === idx
+                className={`h-2.5 rounded-full transition-all duration-300 ${current === idx
                     ? "w-8 bg-[#0052cc]"
                     : "w-2.5 bg-slate-300 hover:bg-slate-400"
-                }`}
+                  }`}
               />
             ))}
           </div>
